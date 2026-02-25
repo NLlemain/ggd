@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groen & Gewoon Doen - Tuinservice</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="wireframe-body">
+    <!-- Header -->
+    <header class="wireframe-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">&#10004;</span>
+                <span class="logo-text">Groen & Gewoon Doen</span>
+            </div>
+            <div class="header-right">
+                <span class="menu-label">Menu</span>
+                <select class="menu-dropdown" id="menuDropdown">
+                    <option value="">&#9660;</option>
+                    <option value="pakketten">Pakketten</option>
+                    <option value="offerte">Offerte</option>
+                    <option value="orders">Mijn Orders</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button class="hamburger-menu" onclick="toggleMobileMenu()">&#9776;</button>
+            </div>
+        </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#pakketten">Pakketten</a>
+            <a href="#offerte">Offerte</a>
+            <a href="#orders">Mijn Orders</a>
+            <a href="/login">Admin</a>
+        </nav>
+    </header>
+
+    <main class="wireframe-main">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h1>Welkom!</h1>
+            <p>Bestel uw tuinservice eenvoudig online!</p>
+        </section>
+
+        <!-- Standaard Pakketten Section -->
+        <section id="pakketten" class="section-card">
+            <h2 class="section-title">Standaard Pakketten</h2>
+            <div class="pakket-selector">
+                <select id="pakketSelect" class="pakket-dropdown">
+                    <option value="">Kies een pakket</option>
+                </select>
+                <button id="bestelPakketBtn" class="btn-bestel">Bestel</button>
+            </div>
+        </section>
+
+        <!-- Custom Offerte Section -->
+        <section id="offerte" class="section-card">
+            <h2 class="section-title">Custom Offerte</h2>
+            <form id="offerteForm" class="offerte-form">
+                <div class="form-row">
+                    <label for="m2gras">m² Gras</label>
+                    <input type="number" id="m2gras" name="m2gras" min="0" placeholder="0">
+                </div>
+                <div class="form-row">
+                    <label for="m2tegels">m² Tegels</label>
+                    <input type="number" id="m2tegels" name="m2tegels" min="0" placeholder="0">
+                </div>
+                <div class="form-row">
+                    <label for="metersHeg">Meters Heg</label>
+                    <input type="number" id="metersHeg" name="metersHeg" min="0" placeholder="0">
+                </div>
+                <div class="form-row opties-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="opties" value="Onkruid verwijderen">
+                        <span>Opties</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="opties" value="Bladruimen">
+                        <span>Opties</span>
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-bereken">Bereken Offerte</button>
+                </div>
+            </form>
+            <div id="offerteResult" class="offerte-result"></div>
+        </section>
+
+        <!-- Mijn Orders Section -->
+        <section id="orders" class="section-card">
+            <div class="section-header-row">
+                <h2 class="section-title">Mijn Orders</h2>
+                <button class="btn-bestel-small" onclick="scrollToSection('pakketten')">Bestel</button>
+            </div>
+            <div class="table-wrapper">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Pakket / Info</th>
+                            <th>Offerte</th>
+                            <th>Status</th>
+                            <th>Datum</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="wireframe-footer">
+        <p>Contact | Social Media | Disclaimer</p>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

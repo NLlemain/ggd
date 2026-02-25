@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Groen & Gewoon Doen</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-body">
+    <!-- Header -->
+    <header class="wireframe-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">&#10004;</span>
+                <span class="logo-text">Groen & Gewoon Doen</span>
+            </div>
+            <div class="header-right">
+                <button class="btn-bestel-small" onclick="window.location.href='/'">Terug naar website</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="login-main">
+        <div class="login-card">
+            <h2>Admin Login</h2>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Gebruikersnaam</label>
+                    <input type="text" id="username" name="username" placeholder="Voer gebruikersnaam in" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Wachtwoord</label>
+                    <input type="password" id="password" name="password" placeholder="Voer wachtwoord in" required>
+                </div>
+
+                <div id="loginError" class="error-message" style="display: none;"></div>
+
+                <button type="submit" class="login-btn">Inloggen</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="wireframe-footer">
+        <p>&copy; Groen & Gewoon Doen</p>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('loginError');
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    sessionStorage.setItem('adminLoggedIn', 'true');
+                    window.location.href = '/admin';
+                } else {
+                    errorDiv.textContent = result.message || 'Ongeldige inloggegevens';
+                    errorDiv.style.display = 'block';
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Er is een fout opgetreden. Probeer opnieuw.';
+                errorDiv.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

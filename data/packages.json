@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "naam": "Basis Pakket",
+    "beschrijving": "Grasmaaien, bladeren ruimen, basis onderhoud",
+    "prijs": 100
+  },
+  {
+    "id": 2,
+    "naam": "Premium Pakket",
+    "beschrijving": "Basis + heg snoeien, onkruid verwijderen, borders",
+    "prijs": 150
+  },
+  {
+    "id": 3,
+    "naam": "Deluxe Pakket",
+    "beschrijving": "Premium + tuinontwerp advies, prioriteit service",
+    "prijs": 250
+  }
+]

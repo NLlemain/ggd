@@ -1,0 +1,875 @@
+/* ============================================
+   GROEN & GEWOON DOEN - WIREFRAME STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #333333;
+    --primary-light: #555555;
+    --bg-light: #f5f5f5;
+    --bg-white: #ffffff;
+    --border-color: #333333;
+    --border-light: #cccccc;
+    --text-dark: #333333;
+    --text-muted: #666666;
+    --success: #4CAF50;
+    --warning: #ff9800;
+    --danger: #f44336;
+    --info: #2196F3;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* ============================================
+   WIREFRAME HEADER (Customer)
+   ============================================ */
+
+.wireframe-header {
+    background: var(--bg-white);
+    border-bottom: 2px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.wireframe-header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.wireframe-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wireframe-header .logo-icon {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.wireframe-header .logo-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.wireframe-header .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wireframe-header .menu-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.wireframe-header .menu-dropdown {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    background: var(--bg-white);
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.wireframe-header .hamburger-menu {
+    display: none;
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 3px;
+}
+
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: var(--bg-white);
+    border-top: 1px solid var(--border-light);
+    padding: 0.5rem 0;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav a {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.mobile-nav a:hover {
+    background: var(--bg-light);
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+.wireframe-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    margin-bottom: 1rem;
+}
+
+.welcome-section h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.welcome-section p {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* Section Cards */
+.section-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-header-row .section-title {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* ============================================
+   PAKKET SELECTOR
+   ============================================ */
+
+.pakket-selector {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.pakket-dropdown {
+    flex: 1;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font-size: 0.95rem;
+    background: var(--bg-white);
+}
+
+/* ============================================
+   OFFERTE FORM
+   ============================================ */
+
+.offerte-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.offerte-form .form-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.offerte-form .form-row label {
+    min-width: 100px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.offerte-form .form-row input[type="number"] {
+    flex: 1;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font-size: 0.95rem;
+}
+
+.opties-row {
+    padding: 0.5rem;
+    border: 1px dashed var(--border-light);
+    background: var(--bg-light);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.offerte-result {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #e8f5e9;
+    border: 1px solid var(--success);
+    border-radius: 3px;
+    font-weight: 500;
+    display: none;
+}
+
+.offerte-result.show {
+    display: block;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-bestel,
+.btn-bereken,
+.btn-toevoegen,
+.btn-opslaan {
+    padding: 0.6rem 1.5rem;
+    background: var(--primary);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: background 0.2s ease;
+}
+
+.btn-bestel:hover,
+.btn-bereken:hover,
+.btn-toevoegen:hover,
+.btn-opslaan:hover {
+    background: var(--primary-light);
+}
+
+.btn-bestel-small {
+    padding: 0.4rem 1rem;
+    background: var(--primary);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85rem;
+    font-family: inherit;
+}
+
+.btn-bestel-small:hover {
+    background: var(--primary-light);
+}
+
+/* Action Buttons */
+.btn-akkoord {
+    padding: 0.35rem 0.75rem;
+    background: var(--success);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 0.25rem;
+}
+
+.btn-niet-akkoord {
+    padding: 0.35rem 0.75rem;
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.btn-inplannen {
+    padding: 0.3rem 0.6rem;
+    background: var(--info);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0.1rem;
+}
+
+.btn-afwijzen {
+    padding: 0.3rem 0.6rem;
+    background: var(--warning);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0.1rem;
+}
+
+.btn-afgerond {
+    padding: 0.3rem 0.6rem;
+    background: var(--success);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0.1rem;
+}
+
+.btn-bewerk {
+    padding: 0.3rem 0.6rem;
+    background: var(--info);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.btn-verwijder {
+    padding: 0.3rem 0.6rem;
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.btn-verwijderen {
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+}
+
+.orders-table,
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.orders-table th,
+.orders-table td,
+.admin-table th,
+.admin-table td {
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.orders-table th,
+.admin-table th {
+    background: var(--bg-light);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.orders-table tbody tr:hover,
+.admin-table tbody tr:hover {
+    background: #fafafa;
+}
+
+/* ============================================
+   WIREFRAME FOOTER
+   ============================================ */
+
+.wireframe-footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary);
+    color: var(--bg-white);
+    margin-top: 2rem;
+}
+
+.wireframe-footer p {
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   ADMIN STYLES
+   ============================================ */
+
+.admin-body {
+    background: var(--bg-light);
+}
+
+.admin-header {
+    background: var(--primary);
+    color: var(--bg-white);
+    padding: 0.75rem 1.5rem;
+}
+
+.admin-header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.admin-header .hamburger-menu {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 3px;
+}
+
+.admin-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-logout {
+    padding: 0.4rem 1rem;
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.btn-logout:hover {
+    background: #d32f2f;
+}
+
+/* Admin Tabs */
+.admin-tabs {
+    display: flex;
+    background: var(--bg-white);
+    border-bottom: 2px solid var(--border-color);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+    margin-right: -1px;
+    transition: background 0.2s ease;
+}
+
+.tab-btn:hover {
+    background: #e0e0e0;
+}
+
+.tab-btn.active {
+    background: var(--bg-white);
+    font-weight: 600;
+    border-bottom: 2px solid var(--bg-white);
+    margin-bottom: -2px;
+}
+
+/* Tab Content */
+.admin-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    padding-bottom: 80px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Nieuw Pakket Section */
+.nieuw-pakket-section {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-light);
+}
+
+.nieuw-pakket-section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.nieuw-pakket-form .form-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.nieuw-pakket-form .form-row label {
+    min-width: 100px;
+    font-size: 0.9rem;
+}
+
+.nieuw-pakket-form .form-row input {
+    flex: 1;
+    max-width: 250px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+/* Tarieven Form */
+.tarieven-form {
+    max-width: 500px;
+}
+
+.tarieven-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tarieven-form .form-group {
+    flex: 1;
+}
+
+.tarieven-form .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.tarieven-form .form-group input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.optional-label {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Admin Footer */
+.admin-footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary);
+    color: var(--bg-white);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.admin-footer p {
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   LOGIN STYLES
+   ============================================ */
+
+.login-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.login-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.login-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.login-card .form-group {
+    margin-bottom: 1rem;
+}
+
+.login-card .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.login-card .form-group input {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font-size: 0.95rem;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.login-btn:hover {
+    background: var(--primary-light);
+}
+
+.error-message {
+    padding: 0.75rem;
+    background: #ffebee;
+    color: var(--danger);
+    border: 1px solid #ef9a9a;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* ============================================
+   NOTIFICATION
+   ============================================ */
+
+.notification {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .wireframe-header .menu-label,
+    .wireframe-header .menu-dropdown {
+        display: none;
+    }
+
+    .wireframe-header .hamburger-menu {
+        display: block;
+    }
+
+    .pakket-selector {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pakket-dropdown {
+        max-width: none;
+    }
+
+    .offerte-form .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .offerte-form .form-row label {
+        min-width: auto;
+        margin-bottom: 0.25rem;
+    }
+
+    .offerte-form .form-row input[type="number"] {
+        max-width: none;
+    }
+
+    .opties-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .admin-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        flex: 1;
+        text-align: center;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .tarieven-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nieuw-pakket-form .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nieuw-pakket-form .form-row label {
+        min-width: auto;
+        margin-bottom: 0.25rem;
+    }
+
+    .nieuw-pakket-form .form-row input {
+        max-width: none;
+    }
+
+    .orders-table,
+    .admin-table {
+        font-size: 0.8rem;
+    }
+
+    .orders-table th,
+    .orders-table td,
+    .admin-table th,
+    .admin-table td {
+        padding: 0.4rem 0.5rem;
+    }
+
+    .btn-inplannen,
+    .btn-afwijzen,
+    .btn-afgerond {
+        display: block;
+        width: 100%;
+        margin: 0.2rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .wireframe-header {
+        padding: 0.5rem 1rem;
+    }
+
+    .wireframe-header .logo-text {
+        font-size: 0.95rem;
+    }
+
+    .welcome-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .section-card {
+        padding: 1rem;
+    }
+
+    .admin-main {
+        padding: 1rem;
+    }
+}

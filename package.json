@@ -1,0 +1,16 @@
+{
+  "name": "groen-gewoon-doen",
+  "version": "1.0.0",
+  "description": "Groen & Gewoon Doen - Tuinservice website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["tuinservice", "garden", "service"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

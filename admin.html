@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Groen & Gewoon Doen</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <button class="hamburger-menu">&#9776;</button>
+            <h1 class="admin-title">Admin - Groen & Gewoon Doen</h1>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="admin-tabs">
+        <button class="tab-btn active" data-tab="orders">Orders</button>
+        <button class="tab-btn" data-tab="pakketten">Pakketten</button>
+        <button class="tab-btn" data-tab="tarieven">Tarieven</button>
+    </nav>
+
+    <main class="admin-main">
+        <!-- Orders Tab -->
+        <section id="orders-tab" class="tab-content active">
+            <h2 class="section-title">Orders Overzicht</h2>
+            <div class="table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Klant</th>
+                            <th>Details</th>
+                            <th>Offerte</th>
+                            <th>Status</th>
+                            <th>Acties</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminOrdersBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Pakketten Tab -->
+        <section id="pakketten-tab" class="tab-content">
+            <h2 class="section-title">Pakketten Beheren</h2>
+
+            <!-- Packages List -->
+            <div class="table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Naam</th>
+                            <th>Prijs</th>
+                            <th>Bewerk</th>
+                            <th>Verwijder</th>
+                        </tr>
+                    </thead>
+                    <tbody id="packagesBody">
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn-verwijderen" id="deleteSelectedBtn">Verwijderen</button>
+
+            <!-- Nieuw Pakket Form -->
+            <div class="nieuw-pakket-section">
+                <h3>Nieuw Pakket</h3>
+                <form id="newPackageForm" class="nieuw-pakket-form">
+                    <div class="form-row">
+                        <label for="pakketNaam">Naam</label>
+                        <input type="text" id="pakketNaam" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="pakketBeschrijving">Beschrijving</label>
+                        <input type="text" id="pakketBeschrijving">
+                    </div>
+                    <div class="form-row">
+                        <label for="pakketPrijs">Prijs</label>
+                        <input type="number" id="pakketPrijs" step="0.01" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-toevoegen">Toevoegen</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Tarieven Tab -->
+        <section id="tarieven-tab" class="tab-content">
+            <h2 class="section-title">Tarieven Beheren <span class="optional-label">(Optional)</span></h2>
+            <form id="ratesForm" class="tarieven-form">
+                <div class="tarieven-row">
+                    <div class="form-group">
+                        <label for="prijsGras">Prijs per m² Gras</label>
+                        <input type="number" id="prijsGras" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prijsTegels">Prijs per m² Tegels</label>
+                        <input type="number" id="prijsTegels" step="0.01" required>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-opslaan">Opslaan</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Admin Footer -->
+    <footer class="admin-footer">
+        <p>&copy; Groen & Gewoon Doen - Admin Paneel</p>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

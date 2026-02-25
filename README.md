@@ -1,1 +1,2 @@
-# ggd
+# GGD
+Groen & Gewoon Doen
